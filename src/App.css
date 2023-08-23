@@ -1,0 +1,12 @@
+.App {
+  color: white;
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 1660px;
+  margin: auto;
+}
+img{
+  width: 100%;
+}
