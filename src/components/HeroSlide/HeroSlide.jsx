@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-
-// react-modal-video
 import '../../../node_modules/react-modal-video/scss/modal-video.scss';
 import ModalVideo from 'react-modal-video';
-// main css file
 import './HeroSlide.css';
 
 const HeroSlide = () => {
@@ -24,7 +19,7 @@ const HeroSlide = () => {
       'https://api.themoviedb.org/3/movie/popular?api_key=15adc4cf6388a9d835667a7400191617&language=en-US'
     )
       .then((res) => res.json())
-      .then((data) => setMovieItems(data.results.slice(1, 5)));
+      .then((data) => setMovieItems(data.results.slice(1, data.results.length / 2)));
   }, []);
 
   return (
@@ -35,9 +30,8 @@ const HeroSlide = () => {
             <div
               className="hero-slide__item"
               style={{
-                backgroundImage: `url("https://image.tmdb.org/t/p/w500${
-                  item.backdrop_path ? item.backdrop_path : item.poster_path
-                }")`,
+                backgroundImage: `url("https://image.tmdb.org/t/p/w500${item.backdrop_path ? item.backdrop_path : item.poster_path
+                  }")`,
               }}
             >
               <div className="hero-slide__item__content container">
@@ -55,20 +49,19 @@ const HeroSlide = () => {
                     <Link to={`/movie/${item.id}`}>
                       <button className="btn me-3">Watch now</button>
                     </Link>
-                    <buton
+                    <button
                       className="btn btn-outline"
                       onClick={() => setOpen(true)}
                     >
                       Watch trailer
-                    </buton>
+                    </button>
                   </div>
                 </div>
 
                 <div className="hero-slide__item__content__poster">
                   <img
-                    src={`https://image.tmdb.org/t/p/w500${
-                      item && item.poster_path
-                    }`}
+                    src={`https://image.tmdb.org/t/p/w500${item && item.poster_path
+                      }`}
                     alt=""
                   />
                 </div>

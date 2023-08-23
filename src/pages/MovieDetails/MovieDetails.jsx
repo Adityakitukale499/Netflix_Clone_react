@@ -39,9 +39,8 @@ const MovieDetails = () => {
           <div
             className="banner"
             style={{
-              backgroundImage: `url("https://image.tmdb.org/t/p/original${
-                movieDetail ? movieDetail.backdrop_path : ''
-              }")`,
+              backgroundImage: `url("https://image.tmdb.org/t/p/original${movieDetail ? movieDetail.backdrop_path : ''
+                }")`,
             }}
           ></div>
 
@@ -50,9 +49,8 @@ const MovieDetails = () => {
               <div
                 className="movie-content__poster__img"
                 style={{
-                  backgroundImage: `url("https://image.tmdb.org/t/p/w500${
-                    movieDetail ? movieDetail.poster_path : ''
-                  }")`,
+                  backgroundImage: `url("https://image.tmdb.org/t/p/w500${movieDetail ? movieDetail.poster_path : ''
+                    }")`,
                 }}
               ></div>
             </div>
@@ -85,7 +83,7 @@ const MovieDetails = () => {
                 {movieDetail ? 'Release date: ' + movieDetail.release_date : ''}
               </div>
               <div className="movie-overview">
-                <h1 style={{fontSize: '30px'}}>Overview</h1>
+                <h1 style={{ fontSize: '30px' }}>Overview</h1>
                 <p className="overview">{movieDetail.overview}</p>
               </div>
             </div>
@@ -97,7 +95,7 @@ const MovieDetails = () => {
           </div>
           {/*========== similar movie slider ============*/}
           <div className="container">
-            <h2>Similar Movies</h2>
+            <h2 style={{ margin: '25px' }}>Similar Movies</h2>
             <SimilarMovie movieList={similarMovies} id={similarMovies.id} />
           </div>
         </>

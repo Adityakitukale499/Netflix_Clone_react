@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-// Import Swiper styles
 import 'swiper/css';
 import './SimilarMovie.css'
 
 import 'swiper/css/pagination';
-// import required modules
-// import { Pagination } from 'swiper';
 import { Link } from 'react-router-dom';
 
 
-const SimilarMovie = ({  movieList,id }) => {
+const SimilarMovie = ({ movieList, id }) => {
   return (
     <div className="movie-list">
       <Swiper
@@ -41,18 +38,11 @@ const SimilarMovie = ({  movieList,id }) => {
               <div
                 className="movie-card"
                 style={{
-                  backgroundImage: `url("https://image.tmdb.org/t/p/w500${
-                    movie ? movie.poster_path : ''
-                  }")`,
+                  backgroundImage: `url("https://image.tmdb.org/t/p/w500${movie ? movie.poster_path : ''
+                    }")`,
                 }}
               >
-                {/* <img
-                  className="cards-img"
-                  alt=""
-                  src={`https://image.tmdb.org/t/p/w500${
-                    movie ? movie.poster_path : ''
-                  }`}
-                /> */}
+
                 <div className="overlay">
                   <div className="card__title">
                     {movie ? movie.original_title : ''}

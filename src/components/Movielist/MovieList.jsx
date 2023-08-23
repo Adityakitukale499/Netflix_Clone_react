@@ -17,8 +17,7 @@ const MovieList = () => {
 
   const getData = () => {
     fetch(
-      `https://api.themoviedb.org/3/movie/${
-        type ? type : 'popular'
+      `https://api.themoviedb.org/3/movie/${type ? type : 'popular'
       }?api_key=15adc4cf6388a9d835667a7400191617&language=en-US`
     )
       .then((res) => res.json())
@@ -29,8 +28,8 @@ const MovieList = () => {
     <div className="movie__list container">
       <h2 className="list__title">{(type ? type : 'POPULAR').toUpperCase()}</h2>
       <div className="list__cards">
-        {movieList.map((movie) => (
-          <MovieCard movie={movie} />
+        {movieList.map((movie, i) => (
+          <MovieCard key={i} movie={movie} />
         ))}
       </div>
     </div>

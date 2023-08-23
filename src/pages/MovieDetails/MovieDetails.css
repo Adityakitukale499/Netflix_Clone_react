@@ -68,6 +68,9 @@
 .movie__voteCount {
   margin-left: 1rem;
 }
+.container{
+  margin-top: 30px;
+}
 
 @media only screen and (max-width: 1024px){
 

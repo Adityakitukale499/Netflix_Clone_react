@@ -4,11 +4,11 @@ import './VideoList.css';
 
 
 const VideoList = () => {
-    const [getVideo, setGetVideo] = useState({});
+  const [getVideo, setGetVideo] = useState({});
   const { id } = useParams();
-console.log(getVideo);
+  console.log(getVideo);
   useEffect(() => {
-       fetchMovieTrailer();
+    fetchMovieTrailer();
   }, []);
 
   async function fetchMovieTrailer() {
@@ -21,31 +21,29 @@ console.log(getVideo);
       return video.type === 'Trailer';
     });
 
-    // setMovieVideos(data.results);
-    // setUrl(data.results[0].key);
     setGetVideo(trailer[0]);
   }
 
 
-    return (
-      <div className="video">
-        <div className="video__title">
-          <h2>{getVideo.name}</h2>
-        </div>
-
-        <iframe
-          className="teaser"
-          width="100%"
-          height="800"
-          src={`https://www.youtube.com/embed/${getVideo.key}`}
-          title={getVideo.title}
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen="allowfullscreen"
-        ></iframe>
+  return (
+    <div className="video">
+      <div className="video__title">
+        <h2>{getVideo.name}</h2>
       </div>
-    );
-    
+
+      <iframe
+        className="teaser"
+        width="100%"
+        height="800"
+        src={`https://www.youtube.com/embed/${getVideo.key}`}
+        title={getVideo.title}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen="allowfullscreen"
+      ></iframe>
+    </div>
+  );
+
 };
 
 export default VideoList;
